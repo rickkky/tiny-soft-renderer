@@ -10,6 +10,10 @@ export class Renderer {
     this.#imageData = new ImageData(width, height);
   }
 
+  get imageData() {
+    return this.#imageData;
+  }
+
   get width() {
     return this.#imageData.width;
   }
