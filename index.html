@@ -7,6 +7,22 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <ul id="nav"></ul>
+    </div>
+
+    <script type="module">
+      import meta from '/demo/meta.json';
+
+      const nav = document.getElementById('nav');
+      for (const item of meta.navs) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `/demo/${item.key}/`;
+        a.textContent = item.title;
+        li.appendChild(a);
+        nav.appendChild(li);
+      }
+    </script>
   </body>
 </html>

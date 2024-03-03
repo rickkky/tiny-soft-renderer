@@ -25,6 +25,8 @@ export class Renderer {
   pixel(x: number, y: number, color: Vector4) {
     x = Math.trunc(x);
     y = Math.trunc(y);
+    // flip y
+    y = this.height - y - 1;
     const offset = (y * this.width + x) * BYTES_PER_PIXEL;
     for (let i = 0; i < BYTES_PER_PIXEL; i++) {
       this.#imageData.data[offset + i] = color[i];

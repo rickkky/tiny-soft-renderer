@@ -1,0 +1,12 @@
+{
+  "navs": [
+    {
+      "key": "bresenham-line",
+      "title": "Bresenham Line"
+    },
+    {
+      "key": "wireframe",
+      "title": "Wireframe"
+    }
+  ]
+}

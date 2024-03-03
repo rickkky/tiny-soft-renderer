@@ -1,5 +1,5 @@
-import { vec2 } from 'vectrix';
 import { Renderer } from '/src';
+import { vec2 } from 'vectrix';
 import { randomColor } from '/common/util/color';
 
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;

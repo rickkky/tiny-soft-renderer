@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@loaders.gl/core": "^4.1.2",
+    "@loaders.gl/obj": "^4.1.2",
     "@types/node": "^20.11.24",
     "typescript": "^5.2.2",
+    "vectrix": "link:/home/ricky/code/vectrix",
     "vite": "^5.1.0"
-  },
-  "dependencies": {
-    "vectrix": "link:/home/ricky/code/vectrix"
   }
 }
