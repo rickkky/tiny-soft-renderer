@@ -4,12 +4,12 @@ import { Vector2 } from 'vectrix';
  * Bresenham line drawing algorithm.
  */
 export function lineBresenham(
-  v0: Vector2,
-  v1: Vector2,
+  p0: Vector2,
+  p1: Vector2,
   action: (x: number, y: number) => void,
 ) {
-  let [x0, y0] = v0;
-  let [x1, y1] = v1;
+  let [x0, y0] = p0;
+  let [x1, y1] = p1;
   let steep = false;
 
   if (Math.abs(y1 - y0) > Math.abs(x1 - x0)) {
