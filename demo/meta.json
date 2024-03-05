@@ -1,8 +1,8 @@
 {
   "navs": [
     {
-      "key": "bresenham-line",
-      "title": "Bresenham Line"
+      "key": "line-bresenham",
+      "title": "Line Bresenham"
     },
     {
       "key": "wireframe",
