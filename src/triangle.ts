@@ -20,19 +20,23 @@ export function triangleSweepLine(
   const deltaX20 = x2 - x0;
   const deltaX21 = x2 - x1;
   const deltaX10 = x1 - x0;
+  const k20Inv = deltaX20 / deltaY20;
+  const k21Inv = deltaX21 / deltaY21;
+  const k10Inv = deltaX10 / deltaY10;
 
-  for (let i = 0; i < deltaY20; i++) {
-    let left = x0 + (i * deltaX20) / deltaY20;
+  for (let i = 0; i <= deltaY20; i++) {
+    let left = x0 + k20Inv * i;
     const secondPart = i > deltaY10 || y1 === y0;
-    const deltaX = secondPart ? deltaX21 : deltaX10;
-    const deltaY = secondPart ? deltaY21 : deltaY10;
+    const kInv = secondPart ? k21Inv : k10Inv;
     const startX = secondPart ? x1 : x0;
-    const deltaYi = secondPart ? i - deltaY10 : i;
-    let right = startX + (deltaYi * deltaX) / deltaY;
+    const deltaY = secondPart ? i - deltaY10 : i;
+    let right = startX + kInv * deltaY;
     if (left > right) {
       [left, right] = [right, left];
     }
-    for (let x = left; x <= right; i++) {
+    left = Math.round(left);
+    right = Math.round(right);
+    for (let x = left; x <= right; x++) {
       action(x, y0 + i);
     }
   }
